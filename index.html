@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AH</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="tema-claro">
+    <!-- Cabeçalho Principal -->
+    <header class="cabecalho-principal">
+        <nav class="navegacao-principal">
+            <div class="container-navegacao">
+                <a href="#" class="logo-principal" onclick="mostrarSecao('inicio')">
+                    <span class="icone-logo">🤟</span>
+                    <span class="texto-logo">LibrasApp</span>
+                </a>
+                
+                <ul class="menu-navegacao" id="menu-navegacao">
+                    <li><a href="#" onclick="mostrarSecao('inicio')" class="link-navegacao">Início</a></li>
+                    <li><a href="#" onclick="mostrarSecao('progresso')" class="link-navegacao">Progresso</a></li>
+                    <li><a href="#" onclick="mostrarSecao('dicionario')" class="link-navegacao">Dicionário</a></li>
+                    <li><a href="#" onclick="mostrarSecao('perfil')" class="link-navegacao">Perfil</a></li>
+                </ul>
+
+                <div class="controles-cabecalho">
+                    <button class="botao-tema" onclick="alternarTema()" aria-label="Alternar tema">
+                        <span class="icone-tema">🌙</span>
+                    </button>
+                    <button class="botao-menu-mobile" onclick="alternarMenuMobile()" aria-label="Menu">
+                        <span class="linha-menu"></span>
+                        <span class="linha-menu"></span>
+                        <span class="linha-menu"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Container Principal -->
+    <main class="container-principal">
+        <!-- Seção Inicial - Trilhas de Aprendizado -->
+        <section id="inicio" class="secao secao-ativa">
+            <div class="painel-trilhas">
+                <div class="cabecalho-trilhas">
+                    <div class="informacoes-usuario">
+                        <h1 class="titulo-principal">Aprenda Libras</h1>
+                        <p class="subtitulo-principal">Domine a Língua Brasileira de Sinais</p>
+                    </div>
+                    
+                    <div class="estatisticas-rapidas">
+                        <div class="cartao-estatistica-rapida">
+                            <div class="icone-estatistica">🔥</div>
+                            <div class="dados-estatistica">
+                                <span class="numero-estatistica" id="sequencia-atual">7</span>
+                                <span class="label-estatistica">Sequência</span>
+                            </div>
+                        </div>
+                        <div class="cartao-estatistica-rapida">
+                            <div class="icone-estatistica">⭐</div>
+                            <div class="dados-estatistica">
+                                <span class="numero-estatistica" id="xp-total">1250</span>
+                                <span class="label-estatistica">XP</span>
+                            </div>
+                        </div>
+                        <div class="cartao-estatistica-rapida">
+                            <div class="icone-estatistica">🏆</div>
+                            <div class="dados-estatistica">
+                                <span class="numero-estatistica" id="nivel-atual">3</span>
+                                <span class="label-estatistica">Nível</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trilha de Lições -->
+                <div class="trilha-licoes">
+                    <!-- Unidade 1: Básico -->
+                    <div class="unidade-aprendizado">
+                        <div class="cabecalho-unidade">
+                            <h2 class="titulo-unidade">UNIDADE 1</h2>
+                            <p class="descricao-unidade">Primeiros passos em Libras</p>
+                            <div class="progresso-unidade">
+                                <div class="barra-progresso-unidade" style="width: 66%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="licoes-container">
+                            <!-- Lição 1 -->
+                            <div class="licao-item completa" data-licao="1">
+                                <div class="linha-conexao"></div>
+                                <div class="circulo-licao" onclick="iniciarLicao(1)">
+                                    <div class="icone-licao">👋</div>
+                                    <div class="coroa-completa">👑</div>
+                                </div>
+                                <div class="informacoes-licao">
+                                    <h3 class="titulo-licao">Cumprimentos</h3>
+                                    <p class="descricao-licao">Aprenda os sinais básicos de saudação</p>
+                                    <div class="progresso-licao">
+                                        <div class="barra-progresso-licao" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lição 2 -->
+                            <div class="licao-item atual" data-licao="2">
+                                <div class="linha-conexao"></div>
+                                <div class="circulo-licao" onclick="iniciarLicao(2)">
+                                    <div class="icone-licao">🙋‍♂️</div>
+                                </div>
+                                <div class="informacoes-licao">
+                                    <h3 class="titulo-licao">Apresentação</h3>
+                                    <p class="descricao-licao">Como se apresentar em Libras</p>
+                                    <div class="progresso-licao">
+                                        <div class="barra-progresso-licao" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lição 3 -->
+                            <div class="licao-item disponivel" data-licao="3">
+                                <div class="linha-conexao"></div>
+                                <div class="circulo-licao" onclick="iniciarLicao(3)">
+                                    <div class="icone-licao">👨‍👩‍👧‍👦</div>
+                                </div>
+                                <div class="informacoes-licao">
+                                    <h3 class="titulo-licao">Família</h3>
+                                    <p class="descricao-licao">Sinais dos membros da família</p>
+                                    <div class="progresso-licao">
+                                        <div class="barra-progresso-licao" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unidade 2: Números -->
+                    <div class="unidade-aprendizado">
+                        <div class="cabecalho-unidade">
+                            <h2 class="titulo-unidade">UNIDADE 2</h2>
+                            <p class="descricao-unidade">Números e quantidades</p>
+                            <div class="progresso-unidade">
+                                <div class="barra-progresso-unidade" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="licoes-container">
+                            <!-- Lição 4 -->
+                            <div class="licao-item bloqueada" data-licao="4">
+                                <div class="linha-conexao"></div>
+                                <div class="circulo-licao">
+                                    <div class="icone-licao">🔢</div>
+                                    <div class="cadeado">🔒</div>
+                                </div>
+                                <div class="informacoes-licao">
+                                    <h3 class="titulo-licao">Números 1-10</h3>
+                                    <p class="descricao-licao">Primeiros números em Libras</p>
+                                    <div class="progresso-licao">
+                                        <div class="barra-progresso-licao" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lição 5 -->
+                            <div class="licao-item bloqueada" data-licao="5">
+                                <div class="linha-conexao"></div>
+                                <div class="circulo-licao">
+                                    <div class="icone-licao">📊</div>
+                                    <div class="cadeado">🔒</div>
+                                </div>
+                                <div class="informacoes-licao">
+                                    <h3 class="titulo-licao">Quantidades</h3>
+                                    <p class="descricao-licao">Muito, pouco, alguns, todos</p>
+                                    <div class="progresso-licao">
+                                        <div class="barra-progresso-licao" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unidade 3: Casa -->
+                    <div class="unidade-aprendizado">
+                        <div class="cabecalho-unidade">
+                            <h2 class="titulo-unidade">UNIDADE 3</h2>
+                            <p class="descricao-unidade">Casa e objetos</p>
+                            <div class="progresso-unidade">
+                                <div class="barra-progresso-unidade" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="licoes-container">
+                            <!-- Lição 6 -->
+                            <div class="licao-item bloqueada" data-licao="6">
+                                <div class="linha-conexao"></div>
+                                <div class="circulo-licao">
+                                    <div class="icone-licao">🏠</div>
+                                    <div class="cadeado">🔒</div>
+                                </div>
+                                <div class="informacoes-licao">
+                                    <h3 class="titulo-licao">Cômodos</h3>
+                                    <p class="descricao-licao">Partes da casa</p>
+                                    <div class="progresso-licao">
+                                        <div class="barra-progresso-licao" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Lições -->
+        <section id="licoes" class="secao">
+            <div class="interface-licao">
+                <div class="cabecalho-licao">
+                    <button class="botao-voltar" onclick="voltarParaInicio()">
+                        <span class="icone-voltar">←</span>
+                    </button>
+                    
+                    <div class="informacoes-licao-atual">
+                        <h2 id="titulo-licao-atual" class="titulo-licao-atual">Cumprimentos</h2>
+                        <div class="contador-progresso">
+                            <span id="pergunta-atual">1</span> / <span id="total-perguntas">5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vidas-container">
+                        <div class="vidas" id="vidas-display">
+                            <span class="vida">❤️</span>
+                            <span class="vida">❤️</span>
+                            <span class="vida">❤️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="barra-progresso-licao-container">
+                    <div class="barra-progresso-licao-atual">
+                        <div class="progresso-preenchido" id="barra-progresso-atual" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="conteudo-licao">
+                    <div class="pergunta-container">
+                        <h3 class="texto-pergunta" id="pergunta-texto">Qual é o sinal para "Olá"?</h3>
+                    </div>
+                    
+                    <div class="demonstracao-sinal">
+                        <div class="video-container">
+                            <img src="/placeholder.svg?height=300&width=400&text=Demonstração+do+Sinal" 
+                                 alt="Demonstração do sinal" 
+                                 class="imagem-sinal" 
+                                 id="imagem-sinal">
+                            <button class="botao-replay" onclick="reproduzirSinal()">
+                                <span class="icone-replay">🔄</span>
+                                <span class="texto-replay">Repetir</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="opcoes-resposta-container">
+                        <div class="opcoes-resposta" id="opcoes-resposta">
+                            <!-- Opções serão inseridas dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="botoes-acao-licao">
+                    <button class="botao-acao botao-secundario" onclick="pularPergunta()">
+                        <span class="texto-botao">Pular</span>
+                    </button>
+                    <button class="botao-acao botao-primario" id="botao-verificar" onclick="verificarResposta()" disabled>
+                        <span class="texto-botao">Verificar</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Progresso -->
+        <section id="progresso" class="secao">
+            <div class="painel-progresso">
+                <div class="cabecalho-progresso">
+                    <h2 class="titulo-secao">Estatísticas de Progresso</h2>
+                    <div class="filtros-tempo">
+                        <button class="filtro-tempo ativo" onclick="alternarFiltroTempo(this, 'hoje')">Hoje</button>
+                        <button class="filtro-tempo" onclick="alternarFiltroTempo(this, 'semana')">Semana</button>
+                        <button class="filtro-tempo" onclick="alternarFiltroTempo(this, 'mes')">Mês</button>
+                        <button class="filtro-tempo" onclick="alternarFiltroTempo(this, 'ano')">Ano</button>
+                    </div>
+                </div>
+                
+                <div class="estatisticas-detalhadas">
+                    <div class="cartao-estatistica principal">
+                        <div class="icone-estatistica-grande">🔥</div>
+                        <div class="dados-estatistica-grande">
+                            <div class="numero-grande" id="sequencia-dias">7</div>
+                            <div class="label-grande">Sequência de dias</div>
+                            <div class="meta-sequencia">Meta: 30 dias</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-estatistica">
+                        <div class="icone-estatistica-media">⭐</div>
+                        <div class="dados-estatistica-media">
+                            <div class="numero-medio" id="xp-total-progresso">1250</div>
+                            <div class="label-medio">XP Total</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-estatistica">
+                        <div class="icone-estatistica-media">🎯</div>
+                        <div class="dados-estatistica-media">
+                            <div class="numero-medio" id="licoes-completas">3</div>
+                            <div class="label-medio">Lições Completas</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-estatistica">
+                        <div class="icone-estatistica-media">🤟</div>
+                        <div class="dados-estatistica-media">
+                            <div class="numero-medio" id="sinais-aprendidos">45</div>
+                            <div class="label-medio">Sinais Aprendidos</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-estatistica">
+                        <div class="icone-estatistica-media">📈</div>
+                        <div class="dados-estatistica-media">
+                            <div class="numero-medio" id="precisao-media">89%</div>
+                            <div class="label-medio">Precisão Média</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-estatistica">
+                        <div class="icone-estatistica-media">⏱️</div>
+                        <div class="dados-estatistica-media">
+                            <div class="numero-medio" id="tempo-estudo">2h 15m</div>
+                            <div class="label-medio">Tempo de Estudo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grafico-atividade">
+                    <h3 class="titulo-subsecao">Atividade Semanal</h3>
+                    <div class="calendario-atividade">
+                        <div class="dia-semana">
+                            <span class="label-dia">Dom</span>
+                            <div class="dia-atividade ativo" data-xp="120"></div>
+                        </div>
+                        <div class="dia-semana">
+                            <span class="label-dia">Seg</span>
+                            <div class="dia-atividade ativo" data-xp="180"></div>
+                        </div>
+                        <div class="dia-semana">
+                            <span class="label-dia">Ter</span>
+                            <div class="dia-atividade ativo" data-xp="150"></div>
+                        </div>
+                        <div class="dia-semana">
+                            <span class="label-dia">Qua</span>
+                            <div class="dia-atividade ativo" data-xp="200"></div>
+                        </div>
+                        <div class="dia-semana">
+                            <span class="label-dia">Qui</span>
+                            <div class="dia-atividade ativo" data-xp="170"></div>
+                        </div>
+                        <div class="dia-semana">
+                            <span class="label-dia">Sex</span>
+                            <div class="dia-atividade ativo" data-xp="190"></div>
+                        </div>
+                        <div class="dia-semana">
+                            <span class="label-dia">Sáb</span>
+                            <div class="dia-atividade hoje" data-xp="160"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conquistas-secao">
+                    <h3 class="titulo-subsecao">Conquistas</h3>
+                    <div class="lista-conquistas">
+                        <div class="conquista desbloqueada">
+                            <div class="icone-conquista">🏆</div>
+                            <div class="informacoes-conquista">
+                                <h4 class="titulo-conquista">Primeira Lição</h4>
+                                <p class="descricao-conquista">Complete sua primeira lição</p>
+                                <span class="data-conquista">Hoje</span>
+                            </div>
+                        </div>
+                        
+                        <div class="conquista desbloqueada">
+                            <div class="icone-conquista">🔥</div>
+                            <div class="informacoes-conquista">
+                                <h4 class="titulo-conquista">Sequência de 7 dias</h4>
+                                <p class="descricao-conquista">Pratique por 7 dias seguidos</p>
+                                <span class="data-conquista">Hoje</span>
+                            </div>
+                        </div>
+                        
+                        <div class="conquista bloqueada">
+                            <div class="icone-conquista">⭐</div>
+                            <div class="informacoes-conquista">
+                                <h4 class="titulo-conquista">Mestre dos Cumprimentos</h4>
+                                <p class="descricao-conquista">Complete todas as lições de cumprimentos</p>
+                                <span class="data-conquista">Em progresso</span>
+                            </div>
+                        </div>
+                        
+                        <div class="conquista bloqueada">
+                            <div class="icone-conquista">🎯</div>
+                            <div class="informacoes-conquista">
+                                <h4 class="titulo-conquista">100% de Precisão</h4>
+                                <p class="descricao-conquista">Acerte todas as perguntas de uma lição</p>
+                                <span class="data-conquista">Bloqueada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Dicionário -->
+        <section id="dicionario" class="secao">
+            <div class="painel-dicionario">
+                <div class="cabecalho-dicionario">
+                    <h2 class="titulo-secao">Dicionário de Libras</h2>
+                    <div class="busca-container">
+                        <input type="text" class="campo-busca" placeholder="Buscar sinal..." id="campo-busca-dicionario">
+                        <button class="botao-busca" onclick="buscarSinal()">🔍</button>
+                    </div>
+                </div>
+                
+                <div class="categorias-dicionario">
+                    <button class="categoria-botao ativo" onclick="filtrarCategoria('todos')">Todos</button>
+                    <button class="categoria-botao" onclick="filtrarCategoria('cumprimentos')">Cumprimentos</button>
+                    <button class="categoria-botao" onclick="filtrarCategoria('familia')">Família</button>
+                    <button class="categoria-botao" onclick="filtrarCategoria('numeros')">Números</button>
+                    <button class="categoria-botao" onclick="filtrarCategoria('casa')">Casa</button>
+                </div>
+                
+                <div class="lista-sinais" id="lista-sinais">
+                    <!-- Sinais serão inseridos dinamicamente -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Perfil -->
+        <section id="perfil" class="secao">
+            <div class="painel-perfil">
+                <div class="cabecalho-perfil">
+                    <h2 class="titulo-secao">Meu Perfil</h2>
+                </div>
+                
+                <div class="informacoes-perfil">
+                    <div class="avatar-container">
+                        <div class="avatar-usuario">👤</div>
+                        <button class="botao-editar-avatar">📷</button>
+                    </div>
+                    
+                    <div class="dados-usuario">
+                        <h3 class="nome-usuario">Estudante de Libras</h3>
+                        <p class="email-usuario">estudante@librasapp.com</p>
+                        <p class="data-cadastro">Membro desde Janeiro 2024</p>
+                    </div>
+                </div>
+
+                <div class="configuracoes-perfil">
+                    <h3 class="titulo-configuracoes">Configurações</h3>
+                    
+                    <div class="lista-configuracoes">
+                        <div class="item-configuracao">
+                            <div class="info-configuracao">
+                                <span class="label-configuracao">Notificações</span>
+                                <span class="descricao-configuracao">Receber lembretes de estudo</span>
+                            </div>
+                            <label class="switch-configuracao">
+                                <input type="checkbox" checked>
+                                <span class="slider-configuracao"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="item-configuracao">
+                            <div class="info-configuracao">
+                                <span class="label-configuracao">Som</span>
+                                <span class="descricao-configuracao">Efeitos sonoros e áudio</span>
+                            </div>
+                            <label class="switch-configuracao">
+                                <input type="checkbox" checked>
+                                <span class="slider-configuracao"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="item-configuracao">
+                            <div class="info-configuracao">
+                                <span class="label-configuracao">Modo Escuro</span>
+                                <span class="descricao-configuracao">Tema escuro para os olhos</span>
+                            </div>
+                            <label class="switch-configuracao">
+                                <input type="checkbox" id="switch-tema-perfil" onchange="alternarTemaViaPerfil()">
+                                <span class="slider-configuracao"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="item-configuracao">
+                            <div class="info-configuracao">
+                                <span class="label-configuracao">Lembrete Diário</span>
+                                <span class="descricao-configuracao">Horário para estudar</span>
+                            </div>
+                            <select class="select-configuracao">
+                                <option value="08:00">08:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="18:00" selected>18:00</option>
+                                <option value="20:00">20:00</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="estatisticas-perfil">
+                    <h3 class="titulo-configuracoes">Estatísticas Pessoais</h3>
+                    
+                    <div class="grid-estatisticas-perfil">
+                        <div class="stat-perfil">
+                            <div class="icone-stat-perfil">📅</div>
+                            <div class="numero-stat-perfil">15</div>
+                            <div class="label-stat-perfil">Dias estudando</div>
+                        </div>
+                        
+                        <div class="stat-perfil">
+                            <div class="icone-stat-perfil">🎯</div>
+                            <div class="numero-stat-perfil">89%</div>
+                            <div class="label-stat-perfil">Taxa de acerto</div>
+                        </div>
+                        
+                        <div class="stat-perfil">
+                            <div class="icone-stat-perfil">⚡</div>
+                            <div class="numero-stat-perfil">7</div>
+                            <div class="label-stat-perfil">Sequência máxima</div>
+                        </div>
+                        
+                        <div class="stat-perfil">
+                            <div class="icone-stat-perfil">🏆</div>
+                            <div class="numero-stat-perfil">4</div>
+                            <div class="label-stat-perfil">Conquistas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Overlay e Modal de Feedback -->
+    <div class="overlay" id="overlay" onclick="fecharFeedback()"></div>
+    
+    <div class="modal-feedback" id="modal-feedback">
+        <div class="conteudo-feedback">
+            <div class="icone-feedback" id="icone-feedback">✅</div>
+            <h3 class="titulo-feedback" id="titulo-feedback">Parabéns!</h3>
+            <p class="mensagem-feedback" id="mensagem-feedback">Você acertou!</p>
+            <div class="xp-ganho" id="xp-ganho-display">+10 XP</div>
+            <button class="botao-continuar" onclick="fecharFeedback()">Continuar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
